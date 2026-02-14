@@ -164,9 +164,9 @@ section {
   margin: 0 auto;
 }
 
-.hero-title {
-  font-size: 60px;
-  font-weight: 600;
+h1.hero-title {
+  font-size: var(--font-size-6xl); /* 64px – tokens: 5xl 80px, 6xl 100px */
+  font-weight: 400;
   line-height: var(--line-height-tight);
   margin-bottom: var(--space-lg);
   color: var(--color-text-primary);
