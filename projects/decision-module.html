@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Decision Module - Aditya Gujaran</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../design-tokens.css">
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="project-page.css">
+</head>
+<body>
+    <!-- Theme Toggle -->
+    <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">
+        <svg class="sun-icon" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="10" cy="10" r="4" stroke="currentColor" stroke-width="1.5"/>
+            <path d="M10 2V4M10 16V18M18 10H16M4 10H2M15.657 4.343L14.243 5.757M5.757 14.243L4.343 15.657M15.657 15.657L14.243 14.243M5.757 5.757L4.343 4.343" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+        <svg class="moon-icon" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+    </button>
+
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="nav-container">
+            <a href="../index.html" class="logo">Aditya Gujaran</a>
+            <a href="../index.html" class="resume-link">Resume (PDF)</a>
+        </div>
+    </nav>
+
+    <!-- Project Hero -->
+    <section class="project-hero">
+        <div class="project-hero-container">
+            <div class="project-hero-grid">
+                <div class="project-hero-left">
+                    <h1>The Decision module</h1>
+                    <p class="project-hero-subtitle">
+                        How we created an interface to <span class="highlight">enable internal ops teams</span> to operate an AI model
+                    </p>
+                    <p class="project-hero-description">
+                        AI powered quality estimation (QE) is the secret sauce to provide B2B translations at scale. Operating a QE model however was a task that often required input from specialists in the AI team.
+                    </p>
+                    <p class="project-hero-description">
+                        This project describes how we went about creating an interface on an appropriate product surface that so that...
+                    </p>
+                </div>
+                <div class="project-hero-right">
+                    <div class="project-meta-table">
+                        <div class="meta-row">
+                            <div class="meta-label">Business objective</div>
+                            <div class="meta-value">Operational efficiency, reduce cost</div>
+                        </div>
+                        <div class="meta-row">
+                            <div class="meta-label">Project type</div>
+                            <div class="meta-value">Improve unused feature</div>
+                        </div>
+                        <div class="meta-row">
+                            <div class="meta-label">My role</div>
+                            <div class="meta-value">Sr. Product designer</div>
+                        </div>
+                        <div class="meta-row">
+                            <div class="meta-label">Skills highlight</div>
+                            <div class="meta-value">Interaction design, AI/ML</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Introduction Section -->
+    <section class="project-section">
+        <div class="project-section-inner">
+            <h2 class="section-heading">Introduction</h2>
+            <p class="section-text">
+                Unbabel uses a multi-step translation pipeline that transforms text from the source language into text in the target language, to produce customer specific translations at scale and speed (< 20 mins).
+            </p>
+            <p class="section-text">
+                The QE model sits between the Machine translation (MT) and Human post edition steps. It measures the quality of the MT translation and decides if the translation needs to be further edited/improved by a human translator.
+            </p>
+        </div>
+
+        <!-- Full width image -->
+        <div class="full-width-image">
+            <p class="image-label">AUTOMATED QUALITY ESTIMATION (QE SCORE)</p>
+            <img src="../images/decision-module-intro.jpg" alt="Quality Estimation Pipeline Diagram">
+        </div>
+    </section>
+
+    <!-- Interface Section -->
+    <section class="project-section">
+        <div class="full-width-image">
+            <img src="../images/decision-module.jpg" alt="Decision Module Interface">
+        </div>
+    </section>
+
+    <!-- Outcomes Section -->
+    <section class="project-section">
+        <div class="project-section-inner">
+            <h2 class="section-heading">Outcomes</h2>
+            <p class="section-text">
+                After wrapping up the designs, I handed over an instrumentation plan to the front end dev as my final contribution on this project.
+            </p>
+            <p class="section-text">
+                Feedback was positive on the the 2nd iteration and after deploy, there was an uptick recorded in the activity in the decision module.
+            </p>
+            <p class="section-text">
+                While we monitored usage and opened channels for feedback to inform future iterations, this project was closed with this deploy as we set about to build other parts of the platform!
+            </p>
+        </div>
+
+        <!-- Uptick in usage image -->
+        <div class="full-width-image">
+            <p class="image-label">UPTICK IN USAGE</p>
+            <img src="../images/decision-module-outcomes.jpg" alt="Usage Analytics Chart">
+        </div>
+    </section>
+
+    <!-- Reflections Section -->
+    <section class="project-section">
+        <div class="project-section-inner">
+            <h2 class="section-heading">Reflections</h2>
+            <p class="section-text">
+                Designing for a Human-AI interaction paradigm in 2022 (read pre chatGPT) presented fun new challenges and many opportunities for collaborative head scratching! Over the course of this project, I truly internalised the non-deterministic nature of the system powering the UI and the importance of have well processed datasets (clean training data for example).
+            </p>
+            <p class="section-text">
+                During the course of UX testing, I also realised that no matter how many guardrails we introduce, only after a period of experimentation and constant tweaking, will the ops team gain the true confidence to rely on the decision module for their customer needs. This was undoubtedly just the beginning of this journey.
+            </p>
+        </div>
+    </section>
+
+    <!-- Divider -->
+    <div class="container">
+        <div class="section-divider"></div>
+    </div>
+
+    <!-- Back Home Button -->
+    <section class="back-home-section">
+        <div class="container">
+            <a href="../index.html" class="back-home-button">Take me back home</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-left">
+                    <a href="https://linkedin.com" class="footer-link">LinkedIn</a>
+                    <a href="#" class="footer-link">Read CV</a>
+                    <p class="copyright">©2024 Aditya Gujaran</p>
+                </div>
+                <div class="footer-right">
+                    <button id="scroll-top" class="scroll-top">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M18 15L12 9L6 15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </button>
+                    <p class="footer-note">Going up?</p>
+                </div>
+            </div>
+            <p class="footer-tagline">This website is a work in progress, much like me! 🚴</p>
+        </div>
+    </footer>
+
+    <script src="../script.js"></script>
+</body>
+</html>

@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TRQ DAD - Aditya Gujaran</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../design-tokens.css">
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="project-page.css">
+</head>
+<body>
+    <!-- Theme Toggle -->
+    <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">
+        <svg class="sun-icon" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="10" cy="10" r="4" stroke="currentColor" stroke-width="1.5"/>
+            <path d="M10 2V4M10 16V18M18 10H16M4 10H2M15.657 4.343L14.243 5.757M5.757 14.243L4.343 15.657M15.657 15.657L14.243 14.243M5.757 5.757L4.343 4.343" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+        <svg class="moon-icon" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+    </button>
+
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="nav-container">
+            <a href="../index.html" class="logo">Aditya Gujaran</a>
+            <a href="../index.html" class="resume-link">Resume (PDF)</a>
+        </div>
+    </nav>
+
+    <!-- Project Hero -->
+    <section class="project-hero">
+        <div class="project-hero-container">
+            <div class="project-hero-grid">
+                <div class="project-hero-left">
+                    <h1>TRQ DAD</h1>
+                    <p class="project-hero-subtitle">
+                        Created a chatbot to submit an <span class="highlight">insurance claim</span> for folks who have been through a car accident
+                    </p>
+                    <p class="project-hero-description">
+                        TRQ DAD (Tranquilidade Declaração Amigável Digital) is a conversational chatbot designed to help people file insurance claims immediately after a car accident. The project aimed to reduce the stress and complexity of the claims process during an already difficult moment.
+                    </p>
+                </div>
+                <div class="project-hero-right">
+                    <div class="project-meta-table">
+                        <div class="meta-row">
+                            <div class="meta-label">Business objective</div>
+                            <div class="meta-value">Reduce claim time, improve UX</div>
+                        </div>
+                        <div class="meta-row">
+                            <div class="meta-label">Project type</div>
+                            <div class="meta-value">New service design</div>
+                        </div>
+                        <div class="meta-row">
+                            <div class="meta-label">My role</div>
+                            <div class="meta-value">Product & Service Designer</div>
+                        </div>
+                        <div class="meta-row">
+                            <div class="meta-label">Skills highlight</div>
+                            <div class="meta-value">Visual design, Interaction design, Service design</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Challenge Section -->
+    <section class="project-section">
+        <div class="project-section-inner">
+            <h2 class="section-heading">The Challenge</h2>
+            <p class="section-text">
+                Filing an insurance claim after a car accident is stressful and confusing. People are often in shock or distress after an accident, traditional claim forms are complex and intimidating, and users don't know what information is required.
+            </p>
+            <p class="section-text">
+                Mobile form-filling at an accident scene is difficult, and missing information leads to claim delays. We needed to design a solution that worked in this challenging context.
+            </p>
+        </div>
+    </section>
+
+    <!-- Solution Section -->
+    <section class="project-section">
+        <div class="project-section-inner">
+            <h2 class="section-heading">The Solution</h2>
+            <p class="section-text">
+                I designed a conversational chatbot that guides users through the claims process step-by-step, asking simple questions and providing contextual help. The bot uses natural, empathetic language appropriate for the situation and breaks down complex forms into simple, single-question interactions.
+            </p>
+        </div>
+
+        <!-- Full width image -->
+        <div class="full-width-image">
+            <img src="../images/trq-dad.jpg" alt="TRQ DAD Chatbot Interface">
+        </div>
+    </section>
+
+    <!-- Design Process Section -->
+    <section class="project-section">
+        <div class="project-section-inner">
+            <h2 class="section-heading">Design Process</h2>
+            <p class="section-text">
+                I interviewed recent accident victims and insurance agents to understand the emotional and practical challenges of the claims process. Using service blueprinting, I mapped the entire claim journey from accident to resolution, identifying touchpoints and pain points.
+            </p>
+            <p class="section-text">
+                I crafted the chatbot dialogue to be empathetic, clear, and efficient, testing multiple conversation flows with users. The visual design needed to be clean and accessible, optimized for mobile use in potentially challenging conditions.
+            </p>
+        </div>
+    </section>
+
+    <!-- Key Features Section -->
+    <section class="project-section">
+        <div class="project-section-inner">
+            <h2 class="section-heading">Key Features</h2>
+            <p class="section-text">
+                The solution included location detection with integrated maps to help users pinpoint the accident location accurately without typing addresses. Users could take photos of damage and submit them directly within the conversation flow.
+            </p>
+            <p class="section-text">
+                Clear visual feedback showed progress through the process, while empathetic language acknowledged the stressful situation while keeping the process moving forward.
+            </p>
+        </div>
+    </section>
+
+    <!-- Impact Section -->
+    <section class="project-section">
+        <div class="project-section-inner">
+            <h2 class="section-heading">Impact</h2>
+            <p class="section-text">
+                The chatbot resulted in a 67% reduction in average claim filing time and an 89% completion rate for mobile submissions (versus 34% for traditional forms). Incomplete claims were reduced from 42% to 12%.
+            </p>
+            <p class="section-text">
+                User feedback showed positive sentiment about the experience, and the project won a service design award in Portugal.
+            </p>
+        </div>
+    </section>
+
+    <!-- Learnings Section -->
+    <section class="project-section">
+        <div class="project-section-inner">
+            <h2 class="section-heading">Learnings</h2>
+            <p class="section-text">
+                This project deepened my understanding of service design and designing for emotional contexts. The conversational interface wasn't just a technical choice—it fundamentally changed how customers experienced a stressful moment.
+            </p>
+            <p class="section-text">
+                Small details like the empathetic language and visual progress indicators had outsized impacts on completion rates and user satisfaction. I also learned the importance of cross-functional collaboration—working closely with insurance domain experts helped me understand legal requirements while the service designer helped me map the broader ecosystem.
+            </p>
+        </div>
+    </section>
+
+    <!-- Divider -->
+    <div class="container">
+        <div class="section-divider"></div>
+    </div>
+
+    <!-- Back Home Button -->
+    <section class="back-home-section">
+        <div class="container">
+            <a href="../index.html" class="back-home-button">Take me back home</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-left">
+                    <a href="https://linkedin.com" class="footer-link">LinkedIn</a>
+                    <a href="#" class="footer-link">Read CV</a>
+                    <p class="copyright">©2024 Aditya Gujaran</p>
+                </div>
+                <div class="footer-right">
+                    <button id="scroll-top" class="scroll-top">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M18 15L12 9L6 15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </button>
+                    <p class="footer-note">Going up?</p>
+                </div>
+            </div>
+            <p class="footer-tagline">This website is a work in progress, much like me! 🚴</p>
+        </div>
+    </footer>
+
+    <script src="../script.js"></script>
+</body>
+</html>

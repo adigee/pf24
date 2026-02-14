@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aditya Gujaran - Product Designer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="design-tokens.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Theme Toggle (Hidden visually, triggered by button) -->
+    <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">
+        <svg class="sun-icon" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="10" cy="10" r="4" stroke="currentColor" stroke-width="1.5"/>
+            <path d="M10 2V4M10 16V18M18 10H16M4 10H2M15.657 4.343L14.243 5.757M5.757 14.243L4.343 15.657M15.657 15.657L14.243 14.243M5.757 5.757L4.343 4.343" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+        <svg class="moon-icon" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+    </button>
+
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="nav-container">
+            <a href="#" class="logo">Aditya Gujaran</a>
+            <a href="#" class="resume-link">Resume (PDF)</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title">
+                    Aditya Gujaran
+                    <span class="hero-subtitle">Product designer</span>
+                </h1>
+                <p class="hero-description">
+                    Hello! Over the past 8+ years, I have built a versatile design practice that includes UX research, Product design and Service design. I like clean information design, lemon cheesecakes and stormy views. Welcome to my portfolio!
+                </p>
+                <div class="location-badge">
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M8 8.5C8.82843 8.5 9.5 7.82843 9.5 7C9.5 6.17157 8.82843 5.5 8 5.5C7.17157 5.5 6.5 6.17157 6.5 7C6.5 7.82843 7.17157 8.5 8 8.5Z" stroke="currentColor" stroke-width="1.5"/>
+                        <path d="M8 14C8 14 13 10.5 13 6.5C13 3.73858 10.7614 1.5 8 1.5C5.23858 1.5 3 3.73858 3 6.5C3 10.5 8 14 8 14Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    Lisbon, Portugal
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Selected Projects -->
+    <section class="projects" id="projects">
+        <div class="container">
+            <h2 class="section-title">Selected projects</h2>
+            <div class="projects-grid">
+                <!-- Project 1 -->
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="images/decision-module.jpg" alt="The Decision module">
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">The Decision module</h3>
+                        <p class="project-description">Designed an interface to increase operational efficiency in a Human-AI interaction paradigm</p>
+                        <div class="project-tags">
+                            <span class="tag">Interaction design</span>
+                            <span class="tag">AI/ML</span>
+                        </div>
+                        <a href="projects/decision-module.html" class="project-link">
+                            View project
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M7.5 15L12.5 10L7.5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="images/on-demand.jpg" alt="On-demand">
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">On-demand</h3>
+                        <p class="project-description">Revamped and expanded an existing feature to migrate and serve customers of an acquired company</p>
+                        <div class="project-tags">
+                            <span class="tag">Visual design</span>
+                            <span class="tag">Systems thinking</span>
+                        </div>
+                        <a href="projects/on-demand.html" class="project-link">
+                            View project
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M7.5 15L12.5 10L7.5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="images/trq-dad.jpg" alt="TRQ DAD">
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">TRQ DAD</h3>
+                        <p class="project-description">Created a chatbot to submit an insurance claim for folks who have been through a car accident</p>
+                        <div class="project-tags">
+                            <span class="tag">Visual design</span>
+                            <span class="tag">Interaction design</span>
+                            <span class="tag">Service design</span>
+                        </div>
+                        <a href="projects/trq-dad.html" class="project-link">
+                            View project
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M7.5 15L12.5 10L7.5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Me -->
+    <section class="about">
+        <div class="container">
+            <div class="about-header">
+                <h2 class="section-title">About Me</h2>
+                <svg class="scroll-indicator" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M6 9L12 15L18 9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </div>
+            <div class="about-content">
+                <div class="about-image">
+                    <img src="images/profile.jpg" alt="Aditya Gujaran">
+                    <div class="location-badge">
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M8 8.5C8.82843 8.5 9.5 7.82843 9.5 7C9.5 6.17157 8.82843 5.5 8 5.5C7.17157 5.5 6.5 6.17157 6.5 7C6.5 7.82843 7.17157 8.5 8 8.5Z" stroke="currentColor" stroke-width="1.5"/>
+                            <path d="M8 14C8 14 13 10.5 13 6.5C13 3.73858 10.7614 1.5 8 1.5C5.23858 1.5 3 3.73858 3 6.5C3 10.5 8 14 8 14Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        Lisbon, Portugal
+                    </div>
+                </div>
+                <div class="about-text">
+                    <h3 class="about-greeting">Hiya! My name is Adi. I am a business oriented product designer and digital storyteller. My past experience has been primarily in 0-1 projects and more recently with AI/ML systems.</h3>
+                    <p class="about-description">I am a thoughtful and collaborative designer working at the intersection of user needs and business objectives. I believe in using human centered design methodologies to define product strategy and design product interfaces/experiences to drive business growth. My endeavour in design is a balancing act between the holistic view of a product and delving into tiny details of an interface.</p>
+                    <p class="about-description">In the past I have gotten positive feedback for my skills in product thinking and interaction design.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Work Experience -->
+    <section class="experience">
+        <div class="container">
+            <h2 class="section-title">Work Experience</h2>
+            <div class="experience-list">
+                <div class="experience-item">
+                    <div class="experience-content">
+                        <h3 class="experience-title">Unbabel (YC W14)</h3>
+                        <p class="experience-role">Sr. Product designer - Linguistic tools  |  Lisbon, Portugal</p>
+                    </div>
+                    <div class="experience-date">2023 — 2020</div>
+                </div>
+                <div class="experience-item">
+                    <div class="experience-content">
+                        <h3 class="experience-title">Cocoon experience</h3>
+                        <p class="experience-role">Product design and Service design  |  Lisbon, Portugal</p>
+                    </div>
+                    <div class="experience-date">2019 — 2016</div>
+                </div>
+                <div class="experience-item">
+                    <div class="experience-content">
+                        <h3 class="experience-title">Novabase</h3>
+                        <p class="experience-role">Experience design consultant  |  Lisbon, Portugal</p>
+                    </div>
+                    <div class="experience-date">2015 — 2013</div>
+                </div>
+                <div class="experience-item">
+                    <div class="experience-content">
+                        <h3 class="experience-title">Google</h3>
+                        <p class="experience-role">UX Research (intern)  |  Mountain View, USA</p>
+                    </div>
+                    <div class="experience-date">2012 — 2012</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact/Footer -->
+    <section class="contact">
+        <div class="container">
+            <div class="available-badge">
+                <span class="status-dot"></span>
+                Available for work
+            </div>
+            <h2 class="contact-title">Seeking full-time/fractional product design opportunities to drive sustainable business growth</h2>
+            <button class="email-button" id="email-button">aditya.gujaran@gmail.com</button>
+            <p class="copy-hint">Click to copy email address 👆</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-left">
+                    <a href="#" class="footer-link">LinkedIn</a>
+                    <a href="#" class="footer-link">Read CV</a>
+                    <p class="copyright">©2024 Aditya Gujaran</p>
+                </div>
+                <div class="footer-right">
+                    <button id="scroll-top" class="scroll-top">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M18 15L12 9L6 15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </button>
+                    <p class="footer-note">Going up?</p>
+                </div>
+            </div>
+            <p class="footer-tagline">This website is a work in progress, much like me! 🚴</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
