@@ -180,7 +180,7 @@ h1.hero-title {
   color: var(--color-accent-purple);
   font-size: inherit;
   line-height: inherit;
-  font-weight: var(--font-weight-bold);
+  font-weight: var(--font-weight-normal);
 }
 
 .hero-description {
