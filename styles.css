@@ -172,9 +172,14 @@ section {
   color: var(--color-text-primary);
 }
 
+.hero-title-line {
+  display: block;
+}
+
 .hero-subtitle {
   color: var(--color-accent-purple);
-  font-size: var(--font-size-3xl);
+  font-size: inherit;
+  line-height: inherit;
   font-weight: var(--font-weight-bold);
 }
 
@@ -601,7 +606,7 @@ section {
   }
 
   .hero-subtitle {
-    font-size: var(--font-size-2xl);
+    font-size: inherit;
   }
 
   .contact-title {
@@ -625,7 +630,7 @@ section {
   }
 
   .hero-subtitle {
-    font-size: var(--font-size-xl);
+    font-size: inherit;
   }
 
   .projects-grid {
@@ -700,7 +705,7 @@ section {
   }
 
   .hero-subtitle {
-    font-size: var(--font-size-lg);
+    font-size: inherit;
   }
 
   .hero-description {
