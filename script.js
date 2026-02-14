@@ -203,6 +203,30 @@ function setupScrollVisibility() {
 }
 */
 
+// === SHARED FOOTER ===
+
+/**
+ * Load the shared footer from components/footer.html and inject into #footer-container.
+ * Base path is detected so it works from root and from projects/ subfolder.
+ * @returns {Promise<void>}
+ */
+function loadFooter() {
+  const container = document.getElementById('footer-container');
+  if (!container) return Promise.resolve();
+
+  const base = window.location.pathname.indexOf('/projects/') !== -1 ? '../' : '';
+  const url = base + 'components/footer.html';
+
+  return fetch(url)
+    .then(function (res) { return res.text(); })
+    .then(function (html) {
+      container.innerHTML = html;
+    })
+    .catch(function () {
+      container.innerHTML = '<footer class="footer"><div class="container"><p class="copyright">©2025 Aditya Gujaran</p></div></footer>';
+    });
+}
+
 // === INITIALIZATION ===
 
 /**
@@ -212,16 +236,18 @@ function init() {
   // Initialize theme first (before page fully renders)
   initializeTheme();
 
-  // Setup interactive features
-  setupThemeToggle();
-  setupSystemThemeListener();
-  setupEmailButton();
-  setupScrollButton();
+  // Load shared footer, then setup interactive features (scroll button lives in footer)
+  loadFooter().then(function () {
+    setupThemeToggle();
+    setupSystemThemeListener();
+    setupEmailButton();
+    setupScrollButton();
 
-  // Optional: Setup scroll button visibility
-  // setupScrollVisibility();
+    // Optional: Setup scroll button visibility
+    // setupScrollVisibility();
 
-  console.log('Portfolio initialized successfully');
+    console.log('Portfolio initialized successfully');
+  });
 }
 
 // Run initialization when DOM is fully loaded
