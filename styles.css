@@ -162,13 +162,15 @@ section {
 .hero-content {
   max-width: 880px;
   margin: 0 auto;
+  padding-left: var(--container-padding);
+  padding-right: var(--container-padding);
 }
 
 h1.hero-title {
   font-size: var(--font-size-6xl); /* 64px – tokens: 5xl 80px, 6xl 100px */
-  font-weight: 400;
+  font-weight: var(--font-weight-normal);
   line-height: var(--line-height-tight);
-  margin-bottom: var(--space-lg);
+  margin-bottom: var(--space-xl);
   color: var(--color-text-primary);
 }
 
@@ -186,9 +188,9 @@ h1.hero-title {
 .hero-description {
   font-size: var(--font-size-base);
   line-height: var(--line-height-base);
-  color: var(--color-text-secondary);
-  margin-bottom: var(--space-lg);
-  max-width: 720px;
+  color: var(--color-text-primary);
+  margin-bottom: var(--space-xl);
+  max-width: 832px;
   margin-left: auto;
   margin-right: auto;
 }
@@ -601,7 +603,7 @@ h1.hero-title {
 
 /* Laptop (max-width: 1200px) */
 @media (max-width: 1200px) {
-  .hero-title {
+  h1.hero-title {
     font-size: var(--font-size-4xl);
   }
 
@@ -625,7 +627,7 @@ h1.hero-title {
     padding: var(--space-4xl) 0 var(--space-3xl);
   }
 
-  .hero-title {
+  h1.hero-title {
     font-size: var(--font-size-3xl);
   }
 
@@ -700,7 +702,7 @@ h1.hero-title {
     padding: var(--space-3xl) 0 var(--space-2xl);
   }
 
-  .hero-title {
+  h1.hero-title {
     font-size: 36px;
   }
 
