@@ -1,0 +1,24 @@
+---
+description: Git/GitHub workflow for this project — branch, change, push, PR, merge, delete branch
+alwaysApply: true
+---
+
+# Git workflow for this project
+
+**You MUST do the full workflow every time: branch → change → commit → push → open PR. Do NOT forget to open the PR.**
+
+When the user says **"new change"** (or similar), **create a new branch from `main` immediately** before any other work. For **any** design or code change in this repo, use this workflow:
+
+1. **Create a new branch** from `main` before making changes. Use a clear branch name (e.g. `update-footer-year`, `fix-nav`, `redesign-hero`); if unspecified, use a generic name like `update`.
+2. **Make the changes** on that branch.
+3. **Commit and push** the branch to `origin`. Use **`all`** permissions when running `git push` (not just `git_write` + `full_network`). Otherwise the credential helper may fail with "could not read Username" / "Device not configured" and the push will not succeed.
+4. **Open a PR — do this yourself, do not skip.** Run `gh pr create --base main --head <branch-name> --title "..." --body "..."` after pushing. Use **`all`** permissions for this command too so `gh` can authenticate. If push or PR creation still fails due to credentials, give the user the exact `git push` and `gh pr create` commands and the compare URL.
+5. **After the PR is merged:** You cannot auto-detect merges. When the user says **"PR merged"**, run: **delete the remote branch** (`git push origin --delete <branch-name>`), then **update local** (`git checkout main` and `git pull origin main`). Tell the user they can also run `./scripts/pr-merged.sh` (or `./scripts/pr-merged.sh <branch-name>`) after merging to do the same without opening chat.
+
+Do this workflow automatically each time. Prefer clear branch names that describe the work (e.g. `update-footer-year`, not `commit`).
+
+**Permissions:** For any terminal command that pushes to the remote (`git push`, `git push origin --delete`) or runs `gh` (e.g. `gh pr create`), request **`all`** permissions so the credential helper and GitHub CLI can authenticate. Using only `git_write` + `full_network` can cause "Device not configured" and failed pushes.
+
+**PR links:** When you give the user the PR URL (or compare URL), always use a **Markdown link** so it is clickable in chat, e.g. `[Open PR](https://github.com/org/repo/pull/123)` or `[PR #7](https://github.com/org/repo/pull/7)`. Do not paste the raw URL only.
+
+**Returning to an open PR / feature branch:** When the user says they want to return to work on a branch (e.g. "pull the branch again" or "return to the text cycle"), update that branch with the latest `main` so the work applies to wherever main has landed: `git fetch origin`, `git checkout main`, `git pull origin main`, then `git checkout <branch-name>` and `git rebase main` (or `git merge main`). Resolve any conflicts, then continue working. Push the updated branch with **`all`** permissions if you've rebased/merged.
