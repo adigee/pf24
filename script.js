@@ -154,6 +154,56 @@ function setupEmailButton() {
   }
 }
 
+// === TEXT CYCLE ANIMATION (Hero) ===
+
+const HERO_CYCLE_WORDS = [
+  'Product designer',
+  'Product researcher',
+  'Product builder',
+  'Digital storyteller',
+];
+
+const HERO_CYCLE_DURATION_MS = 2800;
+
+/**
+ * Run the hero subtitle text cycle: smooth slide + fade between phrases.
+ */
+function initTextCycle() {
+  const container = document.querySelector('.text-cycle');
+  const wordEl = document.querySelector('.text-cycle-word');
+  if (!container || !wordEl) return;
+
+  let index = 0;
+
+  function showNext() {
+    wordEl.classList.remove('cycle-enter');
+    wordEl.classList.add('cycle-exit');
+
+    // Use setTimeout so we don't rely on transitionend (more reliable across browsers)
+    const exitDuration = 500; // match .text-cycle-word transition in CSS
+    setTimeout(() => {
+      wordEl.classList.remove('cycle-exit');
+
+      index = (index + 1) % HERO_CYCLE_WORDS.length;
+      wordEl.textContent = HERO_CYCLE_WORDS[index];
+
+      wordEl.classList.add('cycle-enter');
+      // Force reflow so the enter state (below + invisible) is painted before we animate
+      wordEl.offsetHeight;
+      requestAnimationFrame(() => {
+        wordEl.classList.remove('cycle-enter');
+      });
+    }, exitDuration);
+  }
+
+  const interval = setInterval(showNext, HERO_CYCLE_DURATION_MS);
+
+  // Optional: pause on visibility change (tab hidden)
+  document.addEventListener('visibilitychange', () => {
+    if (document.hidden) clearInterval(interval);
+  });
+}
+
 // === SCROLL TO TOP FUNCTIONALITY ===
 
 /**
@@ -242,6 +292,7 @@ function init() {
     setupSystemThemeListener();
     setupEmailButton();
     setupScrollButton();
+    initTextCycle();
 
     // Optional: Setup scroll button visibility
     // setupScrollVisibility();

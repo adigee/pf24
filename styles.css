@@ -185,6 +185,31 @@ h1.hero-title {
   font-weight: var(--font-weight-normal);
 }
 
+/* Text cycle animation (smooth, Framer-style) */
+.text-cycle {
+  display: inline-block;
+  overflow: hidden;
+  vertical-align: bottom;
+  min-height: 1.2em;
+}
+
+.text-cycle-word {
+  display: inline-block;
+  transition:
+    transform 0.5s cubic-bezier(0.32, 0.72, 0, 1),
+    opacity 0.5s cubic-bezier(0.32, 0.72, 0, 1);
+}
+
+.text-cycle-word.cycle-exit {
+  transform: translateY(-100%);
+  opacity: 0;
+}
+
+.text-cycle-word.cycle-enter {
+  transform: translateY(100%);
+  opacity: 0;
+}
+
 .hero-description {
   font-size: var(--font-size-base);
   line-height: var(--line-height-base);
