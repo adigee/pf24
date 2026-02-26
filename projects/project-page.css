@@ -26,7 +26,7 @@
 
 /* === PROJECT HERO === */
 .project-hero {
-  padding: var(--space-5xl) 0 var(--space-4xl);
+  padding: 112px 0 90px;
 }
 
 .project-hero-container {
@@ -44,7 +44,7 @@
 
 .project-hero-left h1 {
   font-size: var(--font-size-hero);
-  font-weight: var(--font-weight-black);
+  font-weight: var(--font-weight-normal);
   line-height: 1.1;
   margin-bottom: var(--space-xl);
   color: var(--color-text-primary);
@@ -100,7 +100,7 @@
   font-size: var(--font-size-base);
   color: var(--color-text-primary);
   text-align: right;
-  font-weight: var(--font-weight-medium);
+  font-weight: var(--font-weight-normal);
 }
 
 /* === CONTENT SECTIONS === */
@@ -116,11 +116,17 @@
 
 .section-heading {
   font-size: var(--font-size-4xl);
-  font-weight: var(--font-weight-black);
+  font-weight: var(--font-weight-normal);
   line-height: var(--line-height-tight);
   margin-bottom: var(--space-2xl);
   color: var(--color-text-primary);
   letter-spacing: -0.02em;
+}
+
+/* Display variant — larger, lighter weight (used for The Challenge) */
+.section-heading--display {
+  font-size: 72px;
+  font-weight: var(--font-weight-normal);
 }
 
 /* Don't waste space when heading is the only element in a section */
@@ -140,21 +146,33 @@
 }
 
 /* === SECTION IMAGES === */
-/* Images placed inside .project-section-inner — contained, not full-bleed */
 .section-image {
   width: 100%;
-  height: auto;
+  height: 500px;
+  object-fit: cover;
   display: block;
-  margin-top: var(--space-2xl);
+  margin-top: 80px;
   border-radius: var(--radius-md);
+  border: 1px solid var(--color-border);
 }
 
 .section-image + .section-image {
   margin-top: var(--space-md);
 }
 
+/* Hero image — taller and uses contain to show the full UI screenshot */
+.project-hero .section-image {
+  height: 600px;
+  object-fit: contain;
+}
+
+/* Specific image with larger corner radius (9.1 Ease) */
+.section-image--lg-radius {
+  border-radius: var(--radius-lg);
+}
+
 /* === HERO IMAGE === */
-/* Hero image inside .project-hero-container, full container width */
+/* Legacy class — kept for potential use in other pages */
 .project-hero-image {
   margin-top: var(--space-2xl);
 }
@@ -196,7 +214,7 @@
   letter-spacing: 0.1em;
   color: var(--color-text-muted);
   margin-bottom: var(--space-sm);
-  font-weight: var(--font-weight-semibold);
+  font-weight: var(--font-weight-normal);
 }
 
 /* === TAKE ME HOME BUTTON === */
@@ -213,7 +231,7 @@
   border: 2px solid var(--color-text-primary);
   border-radius: var(--radius-full);
   font-size: var(--font-size-lg);
-  font-weight: var(--font-weight-medium);
+  font-weight: var(--font-weight-normal);
   transition: var(--transition-fast);
   cursor: pointer;
 }
@@ -253,6 +271,18 @@
 @media (max-width: 810px) {
   .project-hero {
     padding: var(--space-4xl) 0 var(--space-3xl);
+  }
+
+  .section-image {
+    height: 380px;
+  }
+
+  .project-hero .section-image {
+    height: 460px;
+  }
+
+  .section-heading--display {
+    font-size: var(--font-size-3xl);
   }
 
   .project-hero-grid {
@@ -307,6 +337,18 @@
 @media (max-width: 390px) {
   .project-hero {
     padding: var(--space-3xl) 0 var(--space-2xl);
+  }
+
+  .section-image {
+    height: 240px;
+  }
+
+  .project-hero .section-image {
+    height: 300px;
+  }
+
+  .section-heading--display {
+    font-size: var(--font-size-xl);
   }
 
   .project-hero-left h1 {
