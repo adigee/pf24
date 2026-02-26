@@ -1,6 +1,5 @@
 /* ===================================
    PROJECT PAGE STYLES
-   Matching Framer design exactly
    =================================== */
 
 /* === BACK LINK === */
@@ -15,6 +14,14 @@
 .back-link:hover {
   color: var(--color-text-primary);
   background-color: var(--color-bg-card);
+}
+
+/* === PROJECT CONTAINER === */
+/* Single wrapper for all project page content */
+.project-container {
+  max-width: var(--container-project-width);
+  margin: 0 auto;
+  padding: 0 var(--container-padding);
 }
 
 /* === PROJECT HERO === */
@@ -36,7 +43,7 @@
 }
 
 .project-hero-left h1 {
-  font-size: 88px;
+  font-size: var(--font-size-hero);
   font-weight: var(--font-weight-black);
   line-height: 1.1;
   margin-bottom: var(--space-xl);
@@ -70,7 +77,7 @@
 
 .meta-row {
   display: grid;
-  grid-template-columns: 200px 1fr;
+  grid-template-columns: var(--project-meta-col) 1fr;
   padding: var(--space-lg) 0;
   border-bottom: 1px solid var(--color-border);
   gap: var(--space-xl);
@@ -116,6 +123,11 @@
   letter-spacing: -0.02em;
 }
 
+/* Don't waste space when heading is the only element in a section */
+.section-heading:last-child {
+  margin-bottom: 0;
+}
+
 .section-text {
   font-size: var(--font-size-base);
   line-height: var(--line-height-base);
@@ -127,19 +139,54 @@
   margin-bottom: 0;
 }
 
+/* === SECTION IMAGES === */
+/* Images placed inside .project-section-inner — contained, not full-bleed */
+.section-image {
+  width: 100%;
+  height: auto;
+  display: block;
+  margin-top: var(--space-2xl);
+  border-radius: var(--radius-md);
+}
+
+.section-image + .section-image {
+  margin-top: var(--space-md);
+}
+
+/* === HERO IMAGE === */
+/* Hero image inside .project-hero-container, full container width */
+.project-hero-image {
+  margin-top: var(--space-2xl);
+}
+
+.project-hero-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: var(--radius-md);
+}
+
 /* === FULL WIDTH IMAGES === */
 .full-width-image {
   width: 100%;
   max-width: 100%;
   margin: var(--space-4xl) 0;
-  padding: 0 var(--container-padding);
 }
 
 .full-width-image img {
   width: 100%;
   height: auto;
   display: block;
-  border-radius: var(--radius-lg);
+}
+
+/* Tighten the gap when a section flows directly into an image */
+.project-section + .full-width-image {
+  margin-top: var(--space-xl);
+}
+
+/* Reduce spacing between consecutive images — they read as a sequence */
+.full-width-image + .full-width-image {
+  margin-top: var(--space-md);
 }
 
 .image-label {
@@ -242,6 +289,18 @@
   .project-section {
     padding: var(--space-3xl) 0;
   }
+
+  .full-width-image {
+    margin: var(--space-2xl) 0;
+  }
+
+  .project-section + .full-width-image {
+    margin-top: var(--space-lg);
+  }
+
+  .full-width-image + .full-width-image {
+    margin-top: var(--space-sm);
+  }
 }
 
 /* Mobile (max-width: 390px) */
@@ -282,6 +341,14 @@
 
   .project-section {
     padding: var(--space-2xl) 0;
+  }
+
+  .full-width-image {
+    margin: var(--space-lg) 0;
+  }
+
+  .full-width-image + .full-width-image {
+    margin-top: var(--space-xs);
   }
 
   .back-home-button {

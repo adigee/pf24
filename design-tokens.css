@@ -81,10 +81,13 @@
   --shadow-xl: 0 12px 48px rgba(0, 0, 0, 0.4);
 
   /* === LAYOUT === */
-  --container-max-width: 1200px;
+  --container-max-width: 1312px;
+  --container-project-width: 1072px; /* project page content max-width */
   --container-padding: 24px;
   --nav-height: 80px;
   --section-gap: 96px;
+  --font-size-hero: 88px;       /* project page h1 display size */
+  --project-meta-col: 200px;    /* project metadata label column width */
 
   /* === Z-INDEX === */
   --z-nav: 100;

@@ -142,7 +142,7 @@ function setupEmailButton() {
 
   if (emailButton) {
     emailButton.addEventListener('click', async () => {
-      const email = 'aditya.gujaran@gmail.com';
+      const email = emailButton.dataset.email || emailButton.textContent.trim();
       const success = await copyToClipboard(email);
 
       if (success) {
@@ -178,44 +178,75 @@ function setupScrollButton() {
 }
 
 /**
- * Optional: Show/hide scroll button based on scroll position
- * Uncomment if you want this functionality
+ * Show/hide scroll button based on scroll position
+ * Adds/removes the 'visible' class which drives the CSS opacity transition
  */
-/*
 function toggleScrollButtonVisibility() {
   const scrollButton = document.getElementById('scroll-top');
 
   if (scrollButton) {
-    if (window.scrollY > 500) {
-      scrollButton.style.display = 'flex';
-    } else {
-      scrollButton.style.display = 'none';
-    }
+    scrollButton.classList.toggle('visible', window.scrollY > 500);
   }
 }
 
+/**
+ * Setup scroll button visibility listener
+ */
 function setupScrollVisibility() {
-  // Initial check
+  // Initial check (page may already be scrolled on load)
   toggleScrollButtonVisibility();
 
-  // Check on scroll (with passive listener for better performance)
-  window.addEventListener('scroll', toggleScrollButtonVisibility, { passive: true });
+  // Update on scroll (debounced, passive for performance)
+  window.addEventListener('scroll', debounce(toggleScrollButtonVisibility, 100), { passive: true });
 }
-*/
 
-// === SHARED FOOTER ===
+// === SHARED COMPONENTS ===
+
+/**
+ * Get the relative path prefix needed to reach the project root from the current page.
+ * e.g. root → '', projects/ → '../', projects/ondemand/ → '../../'
+ * @returns {string}
+ */
+function getBasePath() {
+  // Normalize trailing slash (Python's HTTP server serves index.html at /dir/)
+  const pathname = window.location.pathname.replace(/\/$/, '') || '/';
+  const parts = pathname.split('/').filter(Boolean);
+  // If the last segment is a filename (contains a dot), it's not a directory
+  const dirParts = parts.length && parts[parts.length - 1].includes('.')
+    ? parts.slice(0, -1)
+    : parts;
+  return '../'.repeat(dirParts.length);
+}
+
+/**
+ * Load the shared header from components/header.html and inject into #header-container.
+ * @returns {Promise<void>}
+ */
+function loadHeader() {
+  const container = document.getElementById('header-container');
+  if (!container) return Promise.resolve();
+
+  const url = getBasePath() + 'components/header.html';
+
+  return fetch(url)
+    .then(function (res) { return res.text(); })
+    .then(function (html) {
+      container.innerHTML = html;
+    })
+    .catch(function () {
+      container.innerHTML = '<nav class="nav"><div class="nav-container"><a href="/index.html" class="logo">Aditya Gujaran</a></div></nav>';
+    });
+}
 
 /**
  * Load the shared footer from components/footer.html and inject into #footer-container.
- * Base path is detected so it works from root and from projects/ subfolder.
  * @returns {Promise<void>}
  */
 function loadFooter() {
   const container = document.getElementById('footer-container');
   if (!container) return Promise.resolve();
 
-  const base = window.location.pathname.indexOf('/projects/') !== -1 ? '../' : '';
-  const url = base + 'components/footer.html';
+  const url = getBasePath() + 'components/footer.html';
 
   return fetch(url)
     .then(function (res) { return res.text(); })
@@ -236,15 +267,17 @@ function init() {
   // Initialize theme first (before page fully renders)
   initializeTheme();
 
-  // Load shared footer, then setup interactive features (scroll button lives in footer)
-  loadFooter().then(function () {
+  // Load shared header and footer in parallel, then wire up all interactivity
+  Promise.all([loadHeader(), loadFooter()]).then(function () {
     setupThemeToggle();
     setupSystemThemeListener();
     setupEmailButton();
     setupScrollButton();
+    setupScrollVisibility();
 
-    // Optional: Setup scroll button visibility
-    // setupScrollVisibility();
+    // Set dynamic copyright year
+    const yearEl = document.getElementById('copyright-year');
+    if (yearEl) yearEl.textContent = new Date().getFullYear();
 
     console.log('Portfolio initialized successfully');
   });
