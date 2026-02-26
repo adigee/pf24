@@ -23,7 +23,7 @@
 }
 
 .project-hero-container {
-  max-width: 1400px;
+  max-width: var(--container-max-width);
   margin: 0 auto;
   padding: 0 var(--container-padding);
 }
@@ -132,6 +132,7 @@
   width: 100%;
   max-width: 100%;
   margin: var(--space-4xl) 0;
+  padding: 0 var(--container-padding);
 }
 
 .full-width-image img {
