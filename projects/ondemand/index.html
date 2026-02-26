@@ -4,6 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>On-demand - Aditya Gujaran</title>
+    <meta name="description" content="How we refactored and expanded On-demand to migrate Lingo24 customers — a case study by Aditya Gujaran.">
+    <!-- Open Graph -->
+    <meta property="og:title" content="On-demand — Aditya Gujaran">
+    <meta property="og:description" content="How we refactored and expanded On-demand to migrate Lingo24 customers to a new use-case.">
+    <meta property="og:type" content="article">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
@@ -12,254 +17,167 @@
     <link rel="stylesheet" href="../project-page.css">
 </head>
 <body>
-    <!-- Theme Toggle -->
-    <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">
-        <svg class="sun-icon" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <circle cx="10" cy="10" r="4" stroke="currentColor" stroke-width="1.5"/>
-            <path d="M10 2V4M10 16V18M18 10H16M4 10H2M15.657 4.343L14.243 5.757M5.757 14.243L4.343 15.657M15.657 15.657L14.243 14.243M5.757 5.757L4.343 4.343" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-        </svg>
-        <svg class="moon-icon" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>
-    </button>
+    <!-- Shared header (theme toggle + nav) -->
+    <div id="header-container"></div>
 
-    <!-- Navigation -->
-    <nav class="nav">
-        <div class="nav-container">
-            <a href="../../index.html" class="logo">Aditya Gujaran</a>
-            <a href="../../index.html" class="resume-link">Resume (PDF)</a>
-        </div>
-    </nav>
+    <main>
+    <div class="project-container">
 
     <!-- Project Hero -->
     <section class="project-hero">
-        <div class="project-hero-container">
-            <div class="project-hero-grid">
-                <div class="project-hero-left">
-                    <h1>On-demand</h1>
-                    <p class="project-hero-subtitle">
-                        How we refactored and expanded On-demand to <span class="highlight">migrate Lingo24 customers</span> to a new use-case
-                    </p>
-                    <p class="project-hero-description">
-                        Unbabel was designed to be an invisible B2B translation layer for customer support. Following the acquisition of Lingo24, we needed to migrate their localisation customers to our platform — which meant completely overhauling On-demand to support an entirely new use-case.
-                    </p>
-                </div>
-                <div class="project-hero-right">
-                    <div class="project-meta-table">
-                        <div class="meta-row">
-                            <div class="meta-label">Business objective</div>
-                            <div class="meta-value">Acquire new revenue</div>
-                        </div>
-                        <div class="meta-row">
-                            <div class="meta-label">Project type</div>
-                            <div class="meta-value">Refactor existing feature</div>
-                        </div>
-                        <div class="meta-row">
-                            <div class="meta-label">My role</div>
-                            <div class="meta-value">Sr. Product Designer</div>
-                        </div>
-                        <div class="meta-row">
-                            <div class="meta-label">Skills highlight</div>
-                            <div class="meta-value">Visual design, Systems thinking, UX research and discovery, Design system improvement, Cross-functional collaboration</div>
-                        </div>
+        <div class="project-hero-grid">
+            <div class="project-hero-left">
+                <h1>On-demand</h1>
+                <p class="project-hero-subtitle">
+                    How we refactored and expanded On-demand to <span class="highlight">migrate Lingo24 customers</span> to a new use-case
+                </p>
+                <p class="project-hero-description">
+                    Unbabel was designed to be an invisible B2B translation layer for customer support. Following the acquisition of Lingo24, we needed to migrate their localisation customers to our platform — which meant completely overhauling On-demand to support an entirely new use-case.
+                </p>
+            </div>
+            <div class="project-hero-right">
+                <div class="project-meta-table">
+                    <div class="meta-row">
+                        <div class="meta-label">Business objective</div>
+                        <div class="meta-value">Acquire new revenue</div>
+                    </div>
+                    <div class="meta-row">
+                        <div class="meta-label">Project type</div>
+                        <div class="meta-value">Refactor existing feature</div>
+                    </div>
+                    <div class="meta-row">
+                        <div class="meta-label">My role</div>
+                        <div class="meta-value">Sr. Product Designer</div>
+                    </div>
+                    <div class="meta-row">
+                        <div class="meta-label">Skills highlight</div>
+                        <div class="meta-value">Visual design, Systems thinking, UX research and discovery, Design system improvement, Cross-functional collaboration</div>
                     </div>
                 </div>
             </div>
         </div>
+        <!-- Hero image -->
+        <img class="section-image" src="images/1 Hero.png" alt="On-demand hero" loading="lazy">
     </section>
 
-    <!-- 1. Hero image -->
-    <div class="full-width-image">
-        <img src="images/1 Hero.png" alt="On-demand hero">
-    </div>
-
-    <!-- 2. Old version -->
+    <!-- The Challenge -->
     <section class="project-section">
-        <div class="project-section-inner">
-            <h2 class="section-heading">The Challenge</h2>
-            <p class="section-text">
-                Unbabel was designed to be an invisible B2B translation layer for customer support. Our integrations seamlessly fit into a customer's existing support CRM to intercept and translate customer support messages.
-            </p>
-            <p class="section-text">
-                To migrate Lingo24 customers to our platform, we would need to support their primary use-case — Localisation. This meant developing brand new features and workflows for a translation industry use-case that we didn't support comprehensively.
-            </p>
-            <p class="section-text">
-                More than 90% of existing customers would use Unbabel via integrations. Since On-demand was the only customer-facing touchpoint for requesting translations, it became the ideal touchpoint for both existing and new customers to translate files.
-            </p>
-        </div>
+        <h2 class="section-heading">The Challenge</h2>
+        <p class="section-text">
+            Unbabel was designed to be an invisible B2B translation layer for customer support. Our integrations seamlessly fit into a customer's existing support CRM to intercept and translate customer support messages.
+        </p>
+        <p class="section-text">
+            To migrate Lingo24 customers to our platform, we would need to support their primary use-case — Localisation. This meant developing brand new features and workflows for a translation industry use-case that we didn't support comprehensively.
+        </p>
+        <p class="section-text">
+            More than 90% of existing customers would use Unbabel via integrations. Since On-demand was the only customer-facing touchpoint for requesting translations, it became the ideal touchpoint for both existing and new customers to translate files.
+        </p>
+        <img class="section-image" src="images/2 On-demand old.png" alt="On-demand old version" loading="lazy">
+        <img class="section-image" src="images/2.1 On-demand old.png" alt="On-demand old version detail" loading="lazy">
+        <img class="section-image" src="images/2.2 On-demand old.png" alt="On-demand old version detail" loading="lazy">
     </section>
 
-    <div class="full-width-image">
-        <img src="images/2 On-demand old.png" alt="On-demand old version">
-    </div>
-    <div class="full-width-image">
-        <img src="images/2.1 On-demand old.png" alt="On-demand old version detail">
-    </div>
-    <div class="full-width-image">
-        <img src="images/2.2 On-demand old.png" alt="On-demand old version detail">
-    </div>
-
-    <!-- 3. Problem definition -->
+    <!-- Problem Definition -->
     <section class="project-section">
-        <div class="project-section-inner">
-            <h2 class="section-heading">Problem Definition</h2>
-        </div>
+        <h2 class="section-heading">Problem Definition</h2>
+        <img class="section-image" src="images/3 Prob definition.png" alt="Problem definition" loading="lazy">
     </section>
 
-    <div class="full-width-image">
-        <img src="images/3 Prob definition.png" alt="Problem definition">
-    </div>
-
-    <!-- 4. Approach -->
+    <!-- Approach -->
     <section class="project-section">
-        <div class="project-section-inner">
-            <h2 class="section-heading">Approach</h2>
-            <p class="section-text">
-                Our plan was two-fold — release an improved On-demand v2 for existing customers; then evolve into On-demand v3 for migrating localisation customers.
-            </p>
-            <p class="section-text">
-                I partnered with 2 product managers — one from my team and the other building the underlying file translation API — to plan the project, align roadmaps and create a UX research plan to learn about Localisation customer needs. I had parachuted into this team for this project, so my process involved multiple moments of collaboration, participation, and design reviews to earn their trust and create empathy in the team for the migrating customers.
-            </p>
-        </div>
+        <h2 class="section-heading">Approach</h2>
+        <p class="section-text">
+            Our plan was two-fold — release an improved On-demand v2 for existing customers; then evolve into On-demand v3 for migrating localisation customers.
+        </p>
+        <p class="section-text">
+            I partnered with 2 product managers — one from my team and the other building the underlying file translation API — to plan the project, align roadmaps and create a UX research plan to learn about Localisation customer needs. I had parachuted into this team for this project, so my process involved multiple moments of collaboration, participation, and design reviews to earn their trust and create empathy in the team for the migrating customers.
+        </p>
+        <img class="section-image" src="images/4 Approach.png" alt="Approach" loading="lazy">
+        <img class="section-image" src="images/5 On-demand v2 Team activities.png" alt="Team activities" loading="lazy">
     </section>
 
-    <div class="full-width-image">
-        <img src="images/4 Approach.png" alt="Approach">
-    </div>
-
-    <!-- 5. Team activities -->
-    <div class="full-width-image">
-        <img src="images/5 On-demand v2 Team activities.png" alt="Team activities">
-    </div>
-
-    <!-- 6. Design explorations -->
+    <!-- Design Explorations -->
     <section class="project-section">
-        <div class="project-section-inner">
-            <h2 class="section-heading">Design Explorations</h2>
-            <p class="section-text">
-                On-demand v1 had a year-long backlog of feature requests and bugs. Due to unexpected volume of usage, customers were struggling to track, find and retrieve their translation orders. I had studied the backlog and already identified the primary reported customer needs — this helped me understand where the team was and how far we could go.
-            </p>
-            <p class="section-text">
-                I created multiple explorations of how we could introduce search functionality to On-demand. Divergent explorations helped the team understand the trade-offs involved in terms of experience vs the technical constraints. Including engineers in these activities was crucial in teasing out the constraints of our front-end framework and the underlying API.
-            </p>
-        </div>
+        <h2 class="section-heading">Design Explorations</h2>
+        <p class="section-text">
+            On-demand v1 had a year-long backlog of feature requests and bugs. Due to unexpected volume of usage, customers were struggling to track, find and retrieve their translation orders. I had studied the backlog and already identified the primary reported customer needs — this helped me understand where the team was and how far we could go.
+        </p>
+        <p class="section-text">
+            I created multiple explorations of how we could introduce search functionality to On-demand. Divergent explorations helped the team understand the trade-offs involved in terms of experience vs the technical constraints. Including engineers in these activities was crucial in teasing out the constraints of our front-end framework and the underlying API.
+        </p>
+        <img class="section-image" src="images/6 Divergent design explorations.png" alt="Divergent design explorations" loading="lazy">
     </section>
 
-    <div class="full-width-image">
-        <img src="images/6 Divergent design explorations.png" alt="Divergent design explorations">
-    </div>
-
-    <!-- 7. Final design -->
+    <!-- Final Design -->
     <section class="project-section">
-        <div class="project-section-inner">
-            <h2 class="section-heading">Final Design</h2>
-            <p class="section-text">
-                We decided to invest in building a new component for filters and updating the design system. The existing components for tables and filters were clunky and lacking in quality. Improving it would raise the UX across the board on the platform — and demonstrating this value helped get the buy-in needed to invest in a higher quality experience.
-            </p>
-            <p class="section-text">
-                Since the underlying API systems were being overhauled, the lifecycle of a file translation order changed as well. This provided the perfect opportunity to review and improve the customer-facing email templates. I also defined the instrumentation plan to start embedding analytics sensors in this micro-app moving forward.
-            </p>
-        </div>
+        <h2 class="section-heading">Final Design</h2>
+        <p class="section-text">
+            We decided to invest in building a new component for filters and updating the design system. The existing components for tables and filters were clunky and lacking in quality. Improving it would raise the UX across the board on the platform — and demonstrating this value helped get the buy-in needed to invest in a higher quality experience.
+        </p>
+        <p class="section-text">
+            Since the underlying API systems were being overhauled, the lifecycle of a file translation order changed as well. This provided the perfect opportunity to review and improve the customer-facing email templates. I also defined the instrumentation plan to start embedding analytics sensors in this micro-app moving forward.
+        </p>
+        <img class="section-image" src="images/7 Final design walkthrough.gif" alt="Final design walkthrough" loading="lazy">
+        <img class="section-image" src="images/7 Final version.png" alt="Final version" loading="lazy">
+        <img class="section-image" src="images/7.1 final version.png" alt="Final version detail" loading="lazy">
+        <img class="section-image" src="images/7.2 Documentation for design system and analytics.png" alt="Documentation for design system and analytics" loading="lazy">
+        <img class="section-image" src="images/7.3 email flows.png" alt="Email flows" loading="lazy">
     </section>
 
-    <div class="full-width-image">
-        <img src="images/7 Final design walkthrough.gif" alt="Final design walkthrough">
-    </div>
-    <div class="full-width-image">
-        <img src="images/7 Final version.png" alt="Final version">
-    </div>
-    <div class="full-width-image">
-        <img src="images/7.1 final version.png" alt="Final version detail">
-    </div>
-    <div class="full-width-image">
-        <img src="images/7.2 Documentation for design system and analytics.png" alt="Documentation for design system and analytics">
-    </div>
-    <div class="full-width-image">
-        <img src="images/7.3 email flows.png" alt="Email flows">
-    </div>
-
-    <!-- 8. UXR -->
+    <!-- UX Research -->
     <section class="project-section">
-        <div class="project-section-inner">
-            <h2 class="section-heading">UX Research</h2>
-            <p class="section-text">
-                To learn about the customers we were going to migrate, I planned and executed a research track to start building our in-house knowledge about localisation.
-            </p>
-            <p class="section-text">
-                I started by analysing the existing Lingo24 interface for uploading complex files and used it as a starting point to develop a lo-fi prototype of how On-demand could accommodate it on our platform.
-            </p>
-        </div>
+        <h2 class="section-heading">UX Research</h2>
+        <p class="section-text">
+            To learn about the customers we were going to migrate, I planned and executed a research track to start building our in-house knowledge about localisation.
+        </p>
+        <p class="section-text">
+            I started by analysing the existing Lingo24 interface for uploading complex files and used it as a starting point to develop a lo-fi prototype of how On-demand could accommodate it on our platform.
+        </p>
+        <img class="section-image" src="images/8 UXR for On-demand v3.png" alt="UX research for On-demand v3" loading="lazy">
+        <img class="section-image" src="images/9.1 Ease.png" alt="Ease" loading="lazy">
+        <img class="section-image" src="images/9.2 Ease copy.png" alt="Ease copy" loading="lazy">
+        <img class="section-image" src="images/9.2 Lo-fi v3.png" alt="Lo-fi v3" loading="lazy">
     </section>
 
-    <div class="full-width-image">
-        <img src="images/8 UXR for On-demand v3.png" alt="UX research for On-demand v3">
-    </div>
-
-    <!-- 9. Ease / Lo-fi -->
-    <div class="full-width-image">
-        <img src="images/9.1 Ease.png" alt="Ease">
-    </div>
-    <div class="full-width-image">
-        <img src="images/9.2 Ease copy.png" alt="Ease copy">
-    </div>
-    <div class="full-width-image">
-        <img src="images/9.2 Lo-fi v3.png" alt="Lo-fi v3">
-    </div>
-
-    <!-- 10. Research synthesis -->
+    <!-- Research Synthesis -->
     <section class="project-section">
-        <div class="project-section-inner">
-            <h2 class="section-heading">Research Synthesis</h2>
-            <p class="section-text">
-                I recruited and moderated sessions with 8 customers who represented more than 70% of the total translation volume of Lingo24 customers. These sessions had a mixed method structure — starting with exploration of their workflows to uncover how they worked with files, then ending with evaluation of my lo-fi prototype.
-            </p>
-            <p class="section-text">
-                Using this approach, I was able to fast-track to actionable customer inputs and help shape how the product org understood this new use-case.
-            </p>
-        </div>
+        <h2 class="section-heading">Research Synthesis</h2>
+        <p class="section-text">
+            I recruited and moderated sessions with 8 customers who represented more than 70% of the total translation volume of Lingo24 customers. These sessions had a mixed method structure — starting with exploration of their workflows to uncover how they worked with files, then ending with evaluation of my lo-fi prototype.
+        </p>
+        <p class="section-text">
+            Using this approach, I was able to fast-track to actionable customer inputs and help shape how the product org understood this new use-case.
+        </p>
+        <img class="section-image" src="images/10 Research synthesis.png" alt="Research synthesis" loading="lazy">
     </section>
 
-    <div class="full-width-image">
-        <img src="images/10 Research synthesis.png" alt="Research synthesis">
-    </div>
-
-    <!-- 11. Project highlights -->
+    <!-- On-demand v3 — Projects -->
     <section class="project-section">
-        <div class="project-section-inner">
-            <h2 class="section-heading">On-demand v3 — Projects</h2>
-            <p class="section-text">
-                Armed with these insights, I designed the next version of On-demand which was eventually rebranded to Projects. In essence, a project was a group of orders that shared the same translation configurations.
-            </p>
-            <p class="section-text">
-                Key features of On-demand v3 (Projects): multi-file upload, pre-defined templates for translation orders, and a foundation for more complex functionalities like price estimates and DTP.
-            </p>
-            <p class="section-text">
-                The primary challenge throughout was the organisational dynamics — 3 teams, half from a newly acquired organisation, with rampant differences in opinion. As the only product designer on an initiative of over 20 people, my work received a great deal of scrutiny. By creating many demos, checkpoints and holding participatory sessions, I was successful in bringing the entire team on board to build a future-forward customer experience for existing and migrating customers.
-            </p>
-        </div>
+        <h2 class="section-heading">On-demand v3 — Projects</h2>
+        <p class="section-text">
+            Armed with these insights, I designed the next version of On-demand which was eventually rebranded to Projects. In essence, a project was a group of orders that shared the same translation configurations.
+        </p>
+        <p class="section-text">
+            Key features of On-demand v3 (Projects): multi-file upload, pre-defined templates for translation orders, and a foundation for more complex functionalities like price estimates and DTP.
+        </p>
+        <p class="section-text">
+            The primary challenge throughout was the organisational dynamics — 3 teams, half from a newly acquired organisation, with rampant differences in opinion. As the only product designer on an initiative of over 20 people, my work received a great deal of scrutiny. By creating many demos, checkpoints and holding participatory sessions, I was successful in bringing the entire team on board to build a future-forward customer experience for existing and migrating customers.
+        </p>
+        <img class="section-image" src="images/11.1 Projects highlight 1.png" alt="Project highlight 1" loading="lazy">
+        <img class="section-image" src="images/11.2 Projects highlight 2.png" alt="Project highlight 2" loading="lazy">
+        <img class="section-image" src="images/11.3 Projects highlight 3.png" alt="Project highlight 3" loading="lazy">
     </section>
-
-    <div class="full-width-image">
-        <img src="images/11.1 Projects highlight 1.png" alt="Project highlight 1">
-    </div>
-    <div class="full-width-image">
-        <img src="images/11.2 Projects highlight 2.png" alt="Project highlight 2">
-    </div>
-    <div class="full-width-image">
-        <img src="images/11.3 Projects highlight 3.png" alt="Project highlight 3">
-    </div>
 
     <!-- Divider -->
-    <div class="container">
-        <div class="section-divider"></div>
-    </div>
+    <div class="section-divider"></div>
 
     <!-- Back Home Button -->
     <section class="back-home-section">
-        <div class="container">
-            <a href="../../index.html" class="back-home-button">Take me back home</a>
-        </div>
+        <a href="../../index.html" class="back-home-button">Take me back home</a>
     </section>
+
+    </div><!-- /.project-container -->
+    </main>
 
     <!-- Footer (loaded from components/footer.html) -->
     <div id="footer-container"></div>

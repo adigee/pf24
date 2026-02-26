@@ -4,6 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Aditya Gujaran - Product Designer</title>
+    <meta name="description" content="Portfolio of Aditya Gujaran — 8+ years of UX research, product design, and service design. Based in Lisbon, Portugal.">
+    <!-- Open Graph -->
+    <meta property="og:title" content="Aditya Gujaran - Product Designer">
+    <meta property="og:description" content="Portfolio of Aditya Gujaran — 8+ years of UX research, product design, and service design. Based in Lisbon, Portugal.">
+    <meta property="og:type" content="website">
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Aditya Gujaran - Product Designer">
+    <meta name="twitter:description" content="Portfolio of Aditya Gujaran — 8+ years of UX research, product design, and service design. Based in Lisbon, Portugal.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
@@ -11,24 +20,10 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <!-- Theme Toggle (Hidden visually, triggered by button) -->
-    <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">
-        <svg class="sun-icon" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <circle cx="10" cy="10" r="4" stroke="currentColor" stroke-width="1.5"/>
-            <path d="M10 2V4M10 16V18M18 10H16M4 10H2M15.657 4.343L14.243 5.757M5.757 14.243L4.343 15.657M15.657 15.657L14.243 14.243M5.757 5.757L4.343 4.343" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-        </svg>
-        <svg class="moon-icon" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>
-    </button>
+    <!-- Shared header (theme toggle + nav) -->
+    <div id="header-container"></div>
 
-    <!-- Navigation -->
-    <nav class="nav">
-        <div class="nav-container">
-            <a href="#" class="logo">Aditya Gujaran</a>
-            <a href="#" class="resume-link">Resume (PDF)</a>
-        </div>
-    </nav>
+    <main>
 
     <!-- Hero Section -->
     <section class="hero">
@@ -60,7 +55,7 @@
                 <!-- Project 1 -->
                 <div class="project-card">
                     <div class="project-image">
-                        <img src="images/decision-module.jpg" alt="The Decision module">
+                        <img src="images/decision-module.jpg" alt="The Decision module" loading="lazy">
                     </div>
                     <div class="project-content">
                         <h3 class="project-title">The Decision module</h3>
@@ -81,7 +76,7 @@
                 <!-- Project 2 -->
                 <div class="project-card">
                     <div class="project-image">
-                        <img src="images/on-demand.jpg" alt="On-demand">
+                        <img src="images/on-demand.jpg" alt="On-demand" loading="lazy">
                     </div>
                     <div class="project-content">
                         <h3 class="project-title">On-demand</h3>
@@ -102,7 +97,7 @@
                 <!-- Project 3 -->
                 <div class="project-card">
                     <div class="project-image">
-                        <img src="images/trq-dad.jpg" alt="TRQ DAD">
+                        <img src="images/trq-dad.jpg" alt="TRQ DAD" loading="lazy">
                     </div>
                     <div class="project-content">
                         <h3 class="project-title">TRQ DAD</h3>
@@ -135,7 +130,7 @@
             </div>
             <div class="about-content">
                 <div class="about-image">
-                    <img src="images/profile.jpg" alt="Aditya Gujaran">
+                    <img src="images/profile.jpg" alt="Aditya Gujaran" loading="lazy">
                     <div class="location-badge">
                         <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M8 8.5C8.82843 8.5 9.5 7.82843 9.5 7C9.5 6.17157 8.82843 5.5 8 5.5C7.17157 5.5 6.5 6.17157 6.5 7C6.5 7.82843 7.17157 8.5 8 8.5Z" stroke="currentColor" stroke-width="1.5"/>
@@ -198,10 +193,12 @@
                 Available for work
             </div>
             <h2 class="contact-title">Seeking full-time/fractional product design opportunities to drive sustainable business growth</h2>
-            <button class="email-button" id="email-button">aditya.gujaran@gmail.com</button>
+            <button class="email-button" id="email-button" data-email="aditya.gujaran@gmail.com">aditya.gujaran@gmail.com</button>
             <p class="copy-hint">Click to copy email address 👆</p>
         </div>
     </section>
+
+    </main>
 
     <!-- Footer (loaded from components/footer.html) -->
     <div id="footer-container"></div>
